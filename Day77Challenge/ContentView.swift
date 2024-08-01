@@ -9,14 +9,16 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
     @Query var photos: [LabelledPhoto]
     
     var body: some View {
         NavigationStack {
-            List(0..<3, id: \.self) { num in
-                NavigationLink("\(num)") {
-                    Text("\(num)")
+            List {
+                ForEach(photos) { photo in
+                    Text(photo.label)
                 }
+                .onDelete(perform: deletePhoto)
             }
             .listStyle(.plain)
             .navigationTitle("Photo Library")
@@ -25,6 +27,13 @@ struct ContentView: View {
                     AddPhotoView()
                 }
             }
+        }
+    }
+    
+    func deletePhoto(at offsets: IndexSet) {
+        for offset in offsets {
+            let photo = photos[offset]
+            modelContext.delete(photo)
         }
     }
 }
