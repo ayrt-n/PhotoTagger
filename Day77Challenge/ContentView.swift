@@ -16,7 +16,18 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(photos) { photo in
-                    Text(photo.label)
+                    HStack {
+                        if let image = photo.image {
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(15)
+                        } else {
+                            Text("Huh?")
+                        }
+                        Text(photo.label)
+                    }
                 }
                 .onDelete(perform: deletePhoto)
             }
