@@ -10,6 +10,8 @@ import SwiftData
 import SwiftUI
 
 struct AddPhotoView: View {
+    @Environment(\.modelContext) var modelContext
+    
     @State private var selectedPhoto: PhotosPickerItem?
     @State private var processedImage: Image?
     @State private var label = ""
@@ -34,7 +36,7 @@ struct AddPhotoView: View {
                     .textFieldStyle(.roundedBorder)
                     .padding(.vertical)
                 
-                Button("Save", action: saveImage)
+                Button("Save", action: { Task { await saveImage() } })
                     .buttonStyle(.borderedProminent)
                     .disabled(isValidLabel())
             }
@@ -52,8 +54,11 @@ struct AddPhotoView: View {
         }
     }
     
-    func saveImage() {
+    func saveImage() async {
+        guard let imageData = try? await selectedPhoto?.loadTransferable(type: Data.self) else { return }
         
+        let labelledPhoto = LabelledPhoto(imageData: imageData, label: label)
+        modelContext.insert(labelledPhoto)
     }
     
     func isValidLabel() -> Bool {
