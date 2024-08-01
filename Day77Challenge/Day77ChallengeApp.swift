@@ -13,5 +13,6 @@ struct Day77ChallengeApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: LabelledPhoto.self)
     }
 }
