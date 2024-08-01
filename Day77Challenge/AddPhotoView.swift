@@ -35,15 +35,14 @@ struct AddPhotoView: View {
                 TextField("Label", text: $label)
                     .textFieldStyle(.roundedBorder)
                     .padding(.vertical)
-                
-                Button("Save", action: { Task { await saveImage() } })
-                    .buttonStyle(.borderedProminent)
-                    .disabled(isValidLabel())
             }
-
         }
         .navigationTitle("Add a new photo")
         .padding()
+        .toolbar {
+            Button("Save", action: { Task { await saveImage() } })
+                .disabled(isValidLabel())
+        }
     }
     
     func loadImage() async {
