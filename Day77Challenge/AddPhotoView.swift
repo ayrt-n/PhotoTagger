@@ -11,6 +11,7 @@ import SwiftUI
 
 struct AddPhotoView: View {
     @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
     
     @State private var selectedPhoto: PhotosPickerItem?
     @State private var processedImage: Image?
@@ -40,7 +41,12 @@ struct AddPhotoView: View {
         .navigationTitle("Add a new photo")
         .padding()
         .toolbar {
-            Button("Save", action: { Task { await saveImage() } })
+            Button("Save", action: {
+                Task {
+                    await saveImage()
+                    dismiss()
+                }
+            })
                 .disabled(isValidLabel())
         }
     }
