@@ -36,7 +36,7 @@ struct ContentView: View {
             .listStyle(.plain)
             .navigationTitle("Photo Library")
             .navigationDestination(for: LabelledPhoto.self) { photo in
-                PhotoDetailsView(photo: photo)
+                PhotoDetailsView(labelledPhoto: photo)
             }
             .toolbar {
                 NavigationLink("Add Photo") {

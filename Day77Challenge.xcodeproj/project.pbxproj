@@ -14,6 +14,8 @@
 		E8BA6E662C5A6BDA003CE61F /* LabelledPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E652C5A6BDA003CE61F /* LabelledPhoto.swift */; };
 		E8BA6E682C5BA04F003CE61F /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E672C5BA04F003CE61F /* AddPhotoView.swift */; };
 		E8BA6E6C2C5CFD7A003CE61F /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E6B2C5CFD7A003CE61F /* PhotoDetailsView.swift */; };
+		E8BA6E6E2C5D0E7A003CE61F /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E6D2C5D0E7A003CE61F /* LocationFetcher.swift */; };
+		E8BA6E702C5D210E003CE61F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E6F2C5D210E003CE61F /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		E8BA6E652C5A6BDA003CE61F /* LabelledPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledPhoto.swift; sourceTree = "<group>"; };
 		E8BA6E672C5BA04F003CE61F /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		E8BA6E6B2C5CFD7A003CE61F /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
+		E8BA6E6D2C5D0E7A003CE61F /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		E8BA6E6F2C5D210E003CE61F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,11 @@
 		E8BA6E562C5A6547003CE61F /* Day77Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				E8BA6E6F2C5D210E003CE61F /* MapView.swift */,
 				E8BA6E572C5A6547003CE61F /* Day77ChallengeApp.swift */,
 				E8BA6E592C5A6547003CE61F /* ContentView.swift */,
 				E8BA6E6B2C5CFD7A003CE61F /* PhotoDetailsView.swift */,
+				E8BA6E6D2C5D0E7A003CE61F /* LocationFetcher.swift */,
 				E8BA6E672C5BA04F003CE61F /* AddPhotoView.swift */,
 				E8BA6E652C5A6BDA003CE61F /* LabelledPhoto.swift */,
 				E8BA6E5B2C5A6549003CE61F /* Assets.xcassets */,
@@ -146,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BA6E702C5D210E003CE61F /* MapView.swift in Sources */,
 				E8BA6E6C2C5CFD7A003CE61F /* PhotoDetailsView.swift in Sources */,
 				E8BA6E5A2C5A6547003CE61F /* ContentView.swift in Sources */,
+				E8BA6E6E2C5D0E7A003CE61F /* LocationFetcher.swift in Sources */,
 				E8BA6E582C5A6547003CE61F /* Day77ChallengeApp.swift in Sources */,
 				E8BA6E662C5A6BDA003CE61F /* LabelledPhoto.swift in Sources */,
 				E8BA6E682C5BA04F003CE61F /* AddPhotoView.swift in Sources */,
@@ -287,6 +295,7 @@
 				DEVELOPMENT_TEAM = B7HQ9T4KBZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location access for updating photo locations";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +325,7 @@
 				DEVELOPMENT_TEAM = B7HQ9T4KBZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location access for updating photo locations";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

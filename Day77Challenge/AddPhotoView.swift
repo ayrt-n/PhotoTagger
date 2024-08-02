@@ -17,6 +17,8 @@ struct AddPhotoView: View {
     @State private var processedImage: Image?
     @State private var label = ""
     
+    let locationFetcher = LocationFetcher()
+    
     var body: some View {
         Form {
             PhotosPicker(selection: $selectedPhoto, matching: .images) {
@@ -40,6 +42,7 @@ struct AddPhotoView: View {
                 }
             }
         }
+        .onAppear(perform: locationFetcher.start)
         .navigationTitle("Add a new photo")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -65,7 +68,7 @@ struct AddPhotoView: View {
     func saveImage() async {
         guard let imageData = try? await selectedPhoto?.loadTransferable(type: Data.self) else { return }
         
-        let labelledPhoto = LabelledPhoto(imageData: imageData, label: label)
+        let labelledPhoto = LabelledPhoto(imageData: imageData, label: label, location: locationFetcher.lastKnownLocation)
         modelContext.insert(labelledPhoto)
     }
     
