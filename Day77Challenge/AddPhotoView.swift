@@ -18,12 +18,13 @@ struct AddPhotoView: View {
     @State private var label = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
+        Form {
             PhotosPicker(selection: $selectedPhoto, matching: .images) {
                 if let processedImage {
                     processedImage
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                        .listRowInsets(EdgeInsets())
                         .cornerRadius(15)
                 } else {
                     ContentUnavailableView("No Picture", systemImage: "photo.badge.plus", description: Text("Import a photo to get started"))
@@ -31,15 +32,16 @@ struct AddPhotoView: View {
             }
             .buttonStyle(.plain)
             .onChange(of: selectedPhoto) { Task { await loadImage() } }
+            .listRowBackground(Color.clear)
             
             if processedImage != nil {
-                TextField("Label", text: $label)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.vertical)
+                Section {
+                    TextField("Label", text: $label)
+                }
             }
         }
         .navigationTitle("Add a new photo")
-        .padding()
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button("Save", action: {
                 Task {
