@@ -54,8 +54,9 @@ struct AddPhotoView: View {
     }
     
     func loadImage() async {
-        if let loaded = try? await selectedPhoto?.loadTransferable(type: Image.self) {
-            processedImage = loaded
+        if let loaded = try? await selectedPhoto?.loadTransferable(type: Data.self),
+            let uiImage = UIImage(data: loaded) {
+            processedImage = Image(uiImage: uiImage)
         } else {
             print("Failed")
         }
