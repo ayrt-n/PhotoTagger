@@ -16,9 +16,11 @@ struct PhotoDetailsView: View {
                 image
                     .resizable()
                     .scaledToFit()
+                    .cornerRadius(15)
             }
             
             Text(photo.label)
+                .padding(.top)
         }
         .navigationTitle("More details")
         .navigationBarTitleDisplayMode(.inline)
