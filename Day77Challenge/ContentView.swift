@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var photos: [LabelledPhoto]
+    @Query(sort: \LabelledPhoto.label) var photos: [LabelledPhoto]
     
     var body: some View {
         NavigationStack {
