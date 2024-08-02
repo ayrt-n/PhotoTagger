@@ -13,6 +13,7 @@
 		E8BA6E5F2C5A6549003CE61F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8BA6E5E2C5A6549003CE61F /* Preview Assets.xcassets */; };
 		E8BA6E662C5A6BDA003CE61F /* LabelledPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E652C5A6BDA003CE61F /* LabelledPhoto.swift */; };
 		E8BA6E682C5BA04F003CE61F /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E672C5BA04F003CE61F /* AddPhotoView.swift */; };
+		E8BA6E6C2C5CFD7A003CE61F /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6E6B2C5CFD7A003CE61F /* PhotoDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E8BA6E5E2C5A6549003CE61F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8BA6E652C5A6BDA003CE61F /* LabelledPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledPhoto.swift; sourceTree = "<group>"; };
 		E8BA6E672C5BA04F003CE61F /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		E8BA6E6B2C5CFD7A003CE61F /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				E8BA6E572C5A6547003CE61F /* Day77ChallengeApp.swift */,
 				E8BA6E592C5A6547003CE61F /* ContentView.swift */,
+				E8BA6E6B2C5CFD7A003CE61F /* PhotoDetailsView.swift */,
 				E8BA6E672C5BA04F003CE61F /* AddPhotoView.swift */,
 				E8BA6E652C5A6BDA003CE61F /* LabelledPhoto.swift */,
 				E8BA6E5B2C5A6549003CE61F /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BA6E6C2C5CFD7A003CE61F /* PhotoDetailsView.swift in Sources */,
 				E8BA6E5A2C5A6547003CE61F /* ContentView.swift in Sources */,
 				E8BA6E582C5A6547003CE61F /* Day77ChallengeApp.swift in Sources */,
 				E8BA6E662C5A6BDA003CE61F /* LabelledPhoto.swift in Sources */,

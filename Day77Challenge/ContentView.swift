@@ -16,23 +16,28 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(photos) { photo in
-                    HStack {
-                        if let image = photo.image {
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 60, height: 60)
-                                .cornerRadius(15)
-                        } else {
-                            Text("Huh?")
+                    NavigationLink(value: photo) {
+                        HStack {
+                            if let image = photo.image {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 60, height: 60)
+                                    .cornerRadius(15)
+                            } else {
+                                Text("Huh?")
+                            }
+                            Text(photo.label)
                         }
-                        Text(photo.label)
                     }
                 }
                 .onDelete(perform: deletePhoto)
             }
             .listStyle(.plain)
             .navigationTitle("Photo Library")
+            .navigationDestination(for: LabelledPhoto.self) { photo in
+                PhotoDetailsView(photo: photo)
+            }
             .toolbar {
                 NavigationLink("Add Photo") {
                     AddPhotoView()

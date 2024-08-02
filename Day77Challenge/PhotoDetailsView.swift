@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct PhotoDetailsView: View {
+    var photo: LabelledPhoto
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if let image = photo.image {
+                image
+                    .resizable()
+                    .scaledToFit()
+            }
+            
+            Text(photo.label)
+        }
+        .navigationTitle("More details")
+        .navigationBarTitleDisplayMode(.inline)
+        .padding()
+        
+        Spacer()
     }
 }
 
 #Preview {
-    PhotoDetailsView()
+    Text("Not implemented")
 }
